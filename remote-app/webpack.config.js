@@ -11,8 +11,7 @@ sharedMappings.register(
 module.exports = {
   output: {
     uniqueName: "remoteApp",
-    publicPath: "auto",
-    scriptType: "text/javascript"
+    publicPath: "auto"
   },
   optimization: {
     runtimeChunk: false
@@ -30,11 +29,11 @@ module.exports = {
         library: { type: "module" },
 
         // For remotes (please adjust)
-        // name: "remoteApp",
-        // filename: "remoteEntry.js",
-        // exposes: {
-        //     './Component': './/src/app/app.component.ts',
-        // },        
+        name: "remoteApp",
+        filename: "remoteEntry.js",
+        exposes: {
+            './AngularTechModule': './/src/app/angular-tech/angular-tech.module.ts',
+        },        
         
         // For hosts (please adjust)
         // remotes: {
