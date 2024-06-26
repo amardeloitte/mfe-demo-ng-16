@@ -11,7 +11,7 @@ sharedMappings.register(
 module.exports = {
   output: {
     uniqueName: "remoteApp",
-    publicPath: "auto"
+    publicPath: "auto",
   },
   optimization: {
     runtimeChunk: false
