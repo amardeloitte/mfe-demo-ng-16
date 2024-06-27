@@ -99,6 +99,39 @@
           }
         }
       }
+    },
+    "data-m-bus": {
+      "projectType": "library",
+      "root": "projects/data-m-bus",
+      "sourceRoot": "projects/data-m-bus/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/data-m-bus/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/data-m-bus/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/data-m-bus/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/data-m-bus/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
     }
   }
 }
