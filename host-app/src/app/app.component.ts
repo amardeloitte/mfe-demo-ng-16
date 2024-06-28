@@ -9,15 +9,32 @@ import { DataMBusService } from 'data-m-bus';
 export class AppComponent implements OnInit {
   title = 'host-app';
   isNgFav: boolean = false;
+  tech:string = "";
 
   constructor(private mbus: DataMBusService){}
 
-  ngOnInit(): void {
+  ngOnInit(): void
+  {
     this.mbus?.getDataFromRemote()?.subscribe({
       next: (res: any) => {
         this.isNgFav = res?.added;
+
+        if(this.isNgFav)
+          {
+              this.tech="Angular";
+          }
+          else{
+            this.tech="No records";
+          }
       }
     })
+  }
+
+  removefav()
+  {
+    this.tech = "No records";
+    this.isNgFav = false;
+    this.mbus.setDataFromHost({added: false});
   }
 
 }

@@ -1,20 +1,38 @@
-.navbar-dark{
-    height:100;
-    padding:0%;
+
+.content-div
+{
+    height: calc(100vh - 40px);
+    display:flex;
+    align-items: center;
+    background-image: url("https://img.freepik.com/free-photo/development-with-abstract-background_1134-414.jpg?t=st=1719481386~exp=1719484986~hmac=52a8e8a46501affdf7a4ed90e51925dfa6f4ea6d6ec086292d33ba2819d1569a&w=996");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-.navbar-dark .navbar-nav .nav-link {
-    text-transform: uppercase;
-    color: rgb(255, 255, 255);
-    margin: 0 5px;
-}
-
- .navbar-nav .nav-link.active,
- .navbar-nav .nav-link:hover {
-    background:#0c8497;
-   
+.contents{
+    margin: 0 auto;
 }
 
 .content-title{
     text-align: center;
+    font-weight: 900;
+    font-size:64px;
+    color:aliceblue;
+}
+
+.content{
+    text-align: center;
+    color:bisque;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.ngBtn {
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-weight: bold;
 }
