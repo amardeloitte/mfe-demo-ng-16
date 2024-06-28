@@ -1,3 +1,7 @@
+.navbar{
+    background-color: #0d5d69;
+}
+
 .navbar-dark{
     height:100;
     padding:0%;
@@ -13,10 +17,55 @@
 
  .navbar-nav .nav-link.active,
  .navbar-nav .nav-link:hover {
-    background:#0c8497;
-   
+    background:#02a7c0;
+
 }
 
 .content-title{
     text-align: center;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top:40px;
+    right:0px;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    color:black;
+    padding:4px;
+    z-index: 1;
+
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-content li
+  {
+    height:40px;
+    padding: 5px;
+   text-align: center;
+  }
+
+  .dropdown-content li:hover {background-color: #efeeee}
+
+  .remove{
+    margin-left:10px;
+  }
+
+  .in_icons:hover {
+    background-color:rgb(220, 220, 220);
+    border:1px black;
+    cursor: pointer;
+}
+
+.logo {
+  color: #fff;
 }

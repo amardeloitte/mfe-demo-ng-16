@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { DataMBusService } from 'data-m-bus';
 
 @Component({
@@ -6,12 +7,37 @@ import { DataMBusService } from 'data-m-bus';
   templateUrl: './angular-tech.component.html',
   styleUrls: ['./angular-tech.component.scss']
 })
-export class AngularTechComponent {
+export class AngularTechComponent implements OnInit {
+  FavClicked:Boolean=false;
+  hostData:string = "";
 
-  constructor(private dataBus: DataMBusService) {}
+  constructor(private dataBus: DataMBusService, private activatedRoute: ActivatedRoute) {}
+
+  ngOnInit(): void {
+    this.dataBus.getDataFromHost().subscribe({
+      next: (res: any) => {
+        this.FavClicked = res?.added;
+      }
+    })
+
+    this.activatedRoute.paramMap?.subscribe({
+      next: (params: ParamMap) => {
+        this.hostData = params.get("data") as string;
+      }
+    })
+  }
 
   addFav() {
     this.dataBus?.setDataFromRemote({added: true});
+    this.FavClicked=true;
   }
+
+  remFav()
+  {
+    this.dataBus?.setDataFromRemote({added: false});
+    this.FavClicked=false;
+
+  }
+
 
 }
