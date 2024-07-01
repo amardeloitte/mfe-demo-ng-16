@@ -28,7 +28,10 @@ export class AngularTechComponent implements OnInit {
   }
 
   addFav() {
-    this.dataBus?.setDataFromRemote({added: true});
+    //this.dataBus?.setDataFromRemote({added: true});
+    localStorage.setItem("added", 'true');
+    const customEvent = new Event("remoteToHostComm");
+    window.dispatchEvent(customEvent);
     this.FavClicked=true;
   }
 
