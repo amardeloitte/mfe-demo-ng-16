@@ -25,6 +25,10 @@ export class AngularTechComponent implements OnInit {
         this.hostData = params.get("data") as string;
       }
     })
+
+    this.dataBus?.getDataFromRemoteTable().subscribe((res: any) => {
+      this.hostData = res?.text ? res?.text: '';
+    })
   }
 
   addFav() {
