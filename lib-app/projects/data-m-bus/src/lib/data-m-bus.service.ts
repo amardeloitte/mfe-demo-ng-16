@@ -10,6 +10,7 @@ export class DataMBusService {
 
   dataFromHost = new BehaviorSubject<object>({});
   dataFromRemote = new BehaviorSubject<object>({});
+  dataFromRemoteTable = new BehaviorSubject<object>({});
 
   setDataFromHost(data: object) {
     this.dataFromHost?.next(data);
@@ -25,5 +26,13 @@ export class DataMBusService {
 
   getDataFromRemote(): Observable<object> {
     return this.dataFromRemote;
+  }
+
+  setDataFromRemoteTable(data: object) {
+    this.dataFromRemoteTable?.next(data);
+  }
+
+  getDataFromRemoteTable() {
+    return this.dataFromRemoteTable;
   }
 }
